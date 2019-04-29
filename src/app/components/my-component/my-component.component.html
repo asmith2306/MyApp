@@ -1,0 +1,17 @@
+<h1>User Form</h1>
+<form #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="user.name" name="name">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="Address" [(ngModel)]="user.address" name="address">
+        </mat-form-field>
+    </div>
+    <app-age [user]="user"></app-age>
+
+    <button matRaisedButton [disabled]="userForm.invalid">Submit</button>
+</form>
+
